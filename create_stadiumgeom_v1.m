@@ -1,4 +1,4 @@
-function [overall_geom] = create_fullgeom_v1(cava,cavb,stadr,numleads,leadsl,leadsd,leadscens,numell,ellcens,ellsemi,elltheta)
+function [overall_geom] = create_stadiumgeom_v1(cava,cavb,stadr,numleads,leadsl,leadsd,leadscens,numell,ellcens,ellsemi,elltheta)
 %{
 %%%     Get all params
 cava=cav_params.cava;
