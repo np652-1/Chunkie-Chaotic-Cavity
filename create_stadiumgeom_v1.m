@@ -52,7 +52,8 @@ edgefuns{nverts}=edgestadium;
 %%%%%%%%%     Define all the ellipses
 for i2=1:numell
 edgeinc=[edgeinc,nan(2,1)];
-ellfun=@(t) ellcens(:,i2)+ellsemi(:,i2).*[cos( 2*pi*(t(:).'-elltheta(i2)) );sin( 2*pi*(t(:).'-elltheta(i2)) )];
+rotM=[cos(elltheta(i2)),sin(elltheta(i2));-sin(elltheta(i2)),cos(elltheta(i2))];
+ellfun=@(t) ellcens(:,i2)+rotM*[ellsemi(1,i2)*cos( 2*pi*t(:).' );ellsemi(2,i2)*sin( 2*pi*t(:).' )];
 edgefuns=[edgefuns,{ellfun}];
 end
 
